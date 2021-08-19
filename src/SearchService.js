@@ -160,14 +160,14 @@ export default class SearchService {
     };
   }
 
-  static initList(sourceData, searchCursor) {
+  static initList(sourceData, searchCursor, hideSectionList) {
     sourceData.forEach((item) => {
       if (item) {
         // 生成排序索引
         item.orderIndex = '';
         item.isChinese = 0;
 
-        if (item[searchCursor]) {
+        if (item[searchCursor] && !hideSectionList) {
           const tempStr = sTrim(item[searchCursor]);
 
           if (tempStr !== '') {

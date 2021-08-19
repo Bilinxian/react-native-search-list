@@ -172,7 +172,7 @@ export default class SearchList extends Component {
       this.setState({ originalListData: copiedSource });
       this.parseInitList(
         SearchService.sortList(
-          SearchService.initList(copiedSource, searchCursor),
+          SearchService.initList(copiedSource, searchCursor, this.props.hideSectionList),
           this.props.sortFunc
         )
       );
