@@ -6,6 +6,7 @@ import {
   Animated,
   Image,
   Platform,
+  SafeAreaView,
   SectionList,
   TouchableOpacity,
   Alert
@@ -386,6 +387,7 @@ export default class SearchList extends Component {
 
   render() {
     return (
+      <SafeAreaView style={{flex: 1, backgroundColor: '#4a4a4a'}}>
       <Animated.View
         ref="view"
         style={[
@@ -453,6 +455,7 @@ export default class SearchList extends Component {
 
         {this.props.displayMask ? this._renderMask.bind(this)() : null}
       </Animated.View>
+    </SafeAreaView>
     );
   }
 
